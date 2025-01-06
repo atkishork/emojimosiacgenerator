@@ -40,8 +40,8 @@ h1 {
 
 /* Buttons */
 .button {
-    background-color: #6272a4; /* Muted Blue */
-    color: #1e1e2f;
+    background-color: #25f158; /* Green */
+    color: #fff;
     border: none;
     border-radius: 5px;
     padding: 0.75rem 1.5rem;
@@ -53,26 +53,21 @@ h1 {
 }
 
 .button:hover {
-    background-color: #708bd7; /* Lighter Blue */
+    background-color: #69ff94; /* Lighter Green */
 }
 
-/* Save Button */
-a {
+/* Save and Reset Button */
+a, .button {
     display: inline-block;
-    background-color: #50fa7b; /* Green */
-    color: #1e1e2f;
-    border: none;
-    border-radius: 5px;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    text-decoration: none;
     text-align: center;
     margin-top: 1rem;
-    transition: background-color 0.3s ease;
+    text-decoration: none; /* Remove underline from save button */
 }
-
+a {
+    color: #fff;
+}
 a:hover {
-    background-color: #69ff94; /* Lighter Green */
+    color: #708bd7;
 }
 
 /* Canvas */
@@ -101,7 +96,7 @@ footer {
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #50fa7b; /* Green */
+    background-color: #25f158; /* Green */
     color: #1e1e2f;
     border-radius: 5px;
     padding: 1rem;
