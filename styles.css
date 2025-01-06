@@ -94,3 +94,33 @@ footer {
     color: #e4e4e7;
     font-size: 0.875rem;
 }
+
+/* Alert Message */
+.alert {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #50fa7b; /* Green */
+    color: #1e1e2f;
+    border-radius: 5px;
+    padding: 1rem;
+    font-size: 1rem;
+    display: none;
+    z-index: 9999;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease, top 0.3s ease;
+}
+
+.alert.show {
+    display: block;
+    opacity: 1;
+    top: 50px;
+}
+
+.alert.hide {
+    opacity: 0;
+    top: 20px;
+    display: none;
+}
