@@ -3,8 +3,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #2b2b2b; /* Dark Grey */
-    color: #f5f5f5; /* Off White */
+    background-color: #1e1e2f; /* Dark navy */
+    color: #e4e4e7; /* Light greyish white */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,18 +30,18 @@ h1 {
 }
 
 .upload-container input[type="file"] {
-    background-color: #444444; /* Slightly lighter dark grey */
-    color: #f5f5f5;
+    background-color: #2a2a3c;
+    color: #e4e4e7;
     padding: 0.5rem;
-    border: 1px solid #666666;
+    border: 1px solid #44475a;
     border-radius: 5px;
     cursor: pointer;
 }
 
 /* Buttons */
 .button {
-    background-color: #a9a9a9; /* Light Grey */
-    color: #2b2b2b; /* Dark Text on Light Button */
+    background-color: #6272a4; /* Muted Blue */
+    color: #1e1e2f;
     border: none;
     border-radius: 5px;
     padding: 0.75rem 1.5rem;
@@ -53,14 +53,14 @@ h1 {
 }
 
 .button:hover {
-    background-color: #bfbfbf; /* Slightly lighter grey on hover */
+    background-color: #708bd7; /* Lighter Blue */
 }
 
 /* Save Button */
 a {
     display: inline-block;
-    background-color: #a9a9a9; /* Light Grey */
-    color: white; /* White text */
+    background-color: #50fa7b; /* Green */
+    color: #1e1e2f;
     border: none;
     border-radius: 5px;
     padding: 0.75rem 1.5rem;
@@ -72,37 +72,15 @@ a {
 }
 
 a:hover {
-    background-color: #bfbfbf; /* Slightly lighter grey on hover */
+    background-color: #69ff94; /* Lighter Green */
 }
 
 /* Canvas */
 canvas {
-    width: 70%; /* Increased width for a larger mosaic view */
+    width: 90%; /* Full width for all devices */
     height: auto;
     margin-top: 1rem;
-    border: 1px solid #444444;
-}
-
-/* Download Button */
-.download-btn {
-    margin-top: 1rem;
-    text-align: center;
-}
-
-.download-btn a {
-    background-color: #a9a9a9; /* Light Grey */
-    color: white; /* White text */
-    border: none;
-    border-radius: 5px;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-}
-
-.download-btn a:hover {
-    background-color: #bfbfbf; /* Slightly lighter grey on hover */
+    border: 1px solid #44475a;
 }
 
 /* Footer */
@@ -112,7 +90,7 @@ footer {
     width: 100%;
     text-align: center;
     padding: 1rem;
-    background-color: #2b2b2b;
-    color: #f5f5f5;
+    background-color: #1e1e2f;
+    color: #e4e4e7;
     font-size: 0.875rem;
 }
