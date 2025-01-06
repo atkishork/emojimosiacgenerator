@@ -64,7 +64,7 @@ a, .button {
     text-decoration: none; /* Remove underline from save button */
 }
 a {
-    color: #fff;
+    color: #4173ff;
 }
 a:hover {
     color: #708bd7;
@@ -72,7 +72,7 @@ a:hover {
 
 /* Canvas */
 canvas {
-    width: 90%; /* Full width for all devices */
+    width: 45%; /* Full width for all devices */
     height: auto;
     margin-top: 1rem;
     border: 1px solid #44475a;
