@@ -14,15 +14,14 @@
 </head>
 <body>
     <h1>EMOJI MOSAIC GENERATOR</h1>
-    <p>Upload an image to turn into a emoji mosaic. Please wait, processing may take a moment.</p>
+    <p>Upload an image to turn into an emoji mosaic. Please wait, processing may take a moment.</p>
     <div class="upload-container">
         <input type="file">
     </div>
 
-    <!-- Add the footer text here -->
     <footer>
-        <p>Made by Kishor K ❤️ | All rights reserved</p>
-        <p>Instagram: at.kishor.k</p>
+        <p>Made by Kishor K ❤️ | All rights reserved <br>
+        <a href="http://instagram.com/at.kishor.k" target="_blank">Instagram: at.kishor.k</a></p>
     </footer>
 
     <script>
@@ -98,7 +97,14 @@
 
             var saveButton = document.createElement( 'a' );
             saveButton.innerHTML = 'Save as image';
+            saveButton.classList.add('button');
             document.body.appendChild( saveButton );
+
+            var resetButton = document.createElement( 'button' );
+            resetButton.innerHTML = 'Reset';
+            resetButton.classList.add('button');
+            document.body.appendChild( resetButton );
+
             var self = this;
 
             this.targetCanvas = document.createElement('canvas');
@@ -158,27 +164,29 @@
                     this.targetCanvasContext.restore();
                     emojisRendered++;
                     if ( emojisRendered === samples.length ) {
-                        var canvasDataURI = self.targetCanvas.toDataURL('image/jpeg'),
-                            blob = dataURItoBlob(canvasDataURI),
-                            url = window.URL.createObjectURL(blob),
-                            a = document.querySelector('a');
-                        a.href = url;
-                        a.download = 'emoji-mosaic.jpg';
-
-                        // Display the alert message
+                        var canvasDataURI = self.targetCanvas.toDataURL('image/jpeg');
+                        var blob = dataURItoBlob(canvasDataURI);
+                        var url = window.URL.createObjectURL(blob);
+                        saveButton.href = url;
+                        saveButton.download = 'emoji-mosaic.jpg';
                         showAlert("Image generation completed! You can now download the mosaic.");
                     }
                 }).bind(this);
             }, this );
+
+            resetButton.addEventListener('click', function() {
+                location.reload();
+            });
         }
 
         function dataURItoBlob(dataURI) {
-            var binary = atob(dataURI.split(',')[1]);
-            var array = [];
-            for(var i = 0; i < binary.length; i++) {
-                array.push(binary.charCodeAt(i));
+            var byteString = atob(dataURI.split(',')[1]);
+            var ab = new ArrayBuffer(byteString.length);
+            var ia = new Uint8Array(ab);
+            for (var i = 0; i < byteString.length; i++) {
+                ia[i] = byteString.charCodeAt(i);
             }
-            return new Blob([new Uint8Array(array)], {type: 'image/jpeg'});
+            return new Blob([ab], { type: 'image/jpeg' });
         }
 
         document.addEventListener('DOMContentLoaded', function(event) {
@@ -199,12 +207,10 @@
             alertBox.textContent = message;
             document.body.appendChild(alertBox);
 
-            // Show the alert
             setTimeout(function() {
                 alertBox.classList.add('show');
             }, 100);
 
-            // Hide the alert after 3 seconds
             setTimeout(function() {
                 alertBox.classList.remove('show');
                 alertBox.classList.add('hide');
