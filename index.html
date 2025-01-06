@@ -6,22 +6,22 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.png" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-    <title>Emoji Mosaic</title>
+    <title>EmojifyMosaic</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="emojiColors.js"></script>
     <script src="poisson-disc-sampler.js"></script>
 </head>
 <body>
-    <h1>EMOJI MOSAIC GENERATOR</h1>
+    <h1>IMAGE TO EMOJI MOSAIC GENERATOR</h1>
     <p>Upload an image to turn into an emoji mosaic. Please wait, processing may take a moment.</p>
     <div class="upload-container">
         <input type="file">
     </div>
 
     <footer>
-        <p>Made by Kishor K ❤️ | All rights reserved <br>
-        <a href="http://instagram.com/at.kishor.k" target="_blank">Instagram: at.kishor.k</a></p>
+        <p>Made with ❤️ by Kishor K | All rights reserved <br>
+            Instagram: <a href="http://instagram.com/at.kishor.k" target="_blank"> at.kishor.k</a></p>
     </footer>
 
     <script>
@@ -168,11 +168,15 @@
                         var blob = dataURItoBlob(canvasDataURI);
                         var url = window.URL.createObjectURL(blob);
                         saveButton.href = url;
-                        saveButton.download = 'emoji-mosaic.jpg';
+
+                        // Generate a unique file name with timestamp
+                        var uniqueFileName = 'EmojifyMosaic-' + Date.now() + '.jpg';
+                        saveButton.download = uniqueFileName;
+                        
                         showAlert("Image generation completed! You can now download the mosaic.");
                     }
                 }).bind(this);
-            }, this );
+            }, this);
 
             resetButton.addEventListener('click', function() {
                 location.reload();
