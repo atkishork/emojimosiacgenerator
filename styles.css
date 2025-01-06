@@ -55,6 +55,7 @@ h1 {
 .button:hover {
     background-color: #bfbfbf; /* Slightly lighter grey on hover */
 }
+
 /* Save Button */
 a {
     display: inline-block;
@@ -74,10 +75,9 @@ a:hover {
     background-color: #bfbfbf; /* Slightly lighter grey on hover */
 }
 
-
 /* Canvas */
 canvas {
-    max-width: 50%; /* Make mosaic smaller */
+    width: 70%; /* Increased width for a larger mosaic view */
     height: auto;
     margin-top: 1rem;
     border: 1px solid #444444;
@@ -115,40 +115,4 @@ footer {
     background-color: #2b2b2b;
     color: #f5f5f5;
     font-size: 0.875rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 1.5rem;
-    }
-    .upload-container {
-        width: 90%;
-    }
-    .button {
-        width: 80%;
-        text-align: center;
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.25rem;
-    }
-    .upload-container input[type="file"] {
-        font-size: 0.9rem;
-    }
-    .button {
-        font-size: 0.9rem;
-        padding: 0.5rem 1rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    .upload-container {
-        max-width: 800px;
-    }
-    .button {
-        font-size: 1.1rem;
-    }
 }
