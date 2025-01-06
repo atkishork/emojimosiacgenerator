@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-	<link rel="icon" href="favicon.png" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <title>Emoji Mosaic</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
@@ -22,12 +22,13 @@
     <!-- Add the footer text here -->
     <footer>
         <p>Made by Kishor K ❤️ | All rights reserved</p>
-		<p>Instagram: at.kishor.k</p>
+        <p>Instagram: at.kishor.k</p>
     </footer>
 
     <script>
         emojiMap = loadEmojis();
         emojiInts = emojiPoints();
+        
         function loadEmojis(){
             var colorMap = {};
             for (var i=0; i<emojiColors.length; i++){
@@ -36,7 +37,7 @@
                 }
                 fileNumber = pad(i+1 , 4);
                 img = 'resized-emoji-images/' + fileNumber + '.png';
-                colorMap[emojiColors[i]] = img
+                colorMap[emojiColors[i]] = img;
             }
             return colorMap;
         }
@@ -163,6 +164,9 @@
                             a = document.querySelector('a');
                         a.href = url;
                         a.download = 'emoji-mosaic.jpg';
+
+                        // Display the alert message
+                        showAlert("Image generation completed! You can now download the mosaic.");
                     }
                 }).bind(this);
             }, this );
@@ -188,6 +192,27 @@
                 reader.readAsDataURL(file);
             });
         });
+
+        function showAlert(message) {
+            var alertBox = document.createElement('div');
+            alertBox.classList.add('alert');
+            alertBox.textContent = message;
+            document.body.appendChild(alertBox);
+
+            // Show the alert
+            setTimeout(function() {
+                alertBox.classList.add('show');
+            }, 100);
+
+            // Hide the alert after 3 seconds
+            setTimeout(function() {
+                alertBox.classList.remove('show');
+                alertBox.classList.add('hide');
+                setTimeout(function() {
+                    alertBox.remove();
+                }, 500);
+            }, 3000);
+        }
     </script>
 </body>
 </html>
